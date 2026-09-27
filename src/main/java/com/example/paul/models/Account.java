@@ -2,7 +2,9 @@ package com.example.paul.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import java.util.List;
 
@@ -10,9 +12,11 @@ import java.util.List;
 // TODO Add support for foreign currency accounts
 @Entity
 @Table(name = "account", schema = "online_bank")
+@SequenceGenerator(name = "account_seq", sequenceName = "account_sequence", schema = "online_bank", initialValue = 3)
 public class Account {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_seq")
     private long id;
 
     private String sortCode;
