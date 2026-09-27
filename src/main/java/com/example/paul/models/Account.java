@@ -12,7 +12,7 @@ import java.util.List;
 // TODO Add support for foreign currency accounts
 @Entity
 @Table(name = "account", schema = "online_bank")
-@SequenceGenerator(name = "account_seq", sequenceName = "account_sequence", schema = "online_bank", initialValue = 3)
+@SequenceGenerator(name = "account_seq", sequenceName = "account_sequence", schema = "online_bank", initialValue = 3, allocationSize = 1)
 public class Account {
 
     @Id
