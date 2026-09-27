@@ -1,6 +1,6 @@
 package com.example.paul.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 // TODO Add support for Bank charges, currency conversion, setup repeat payment/ standing order

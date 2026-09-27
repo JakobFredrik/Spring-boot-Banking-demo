@@ -16,7 +16,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,9 +49,9 @@ public class AccountRestController {
 
             // Return the account details, or warn that no account was found for given input
             if (account == null) {
-                return new ResponseEntity<>(constants.NO_ACCOUNT_FOUND, HttpStatus.OK);
+                return new ResponseEntity<>(constants.NO_ACCOUNT_FOUND, HttpStatus.NO_CONTENT);
             } else {
-                return new ResponseEntity<>(account, HttpStatus.OK);
+                return new ResponseEntity<>(account, HttpStatus.NO_CONTENT);
             }
         } else {
             return new ResponseEntity<>(constants.INVALID_SEARCH_CRITERIA, HttpStatus.BAD_REQUEST);
